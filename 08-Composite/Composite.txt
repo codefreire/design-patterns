@@ -1,0 +1,19 @@
+﻿Propósito
+* Permite componer objetos en estructuras de árbol y trabajar con esas estructuras como si fueran objetos individuales.
+
+Solución
+* interfaz Componente: Describe operaciones que son comunes a elementos simples y complejos del árbol.
+* Hoja: Elemento básico de un árbol que no tiene subelementos.
+* Contenedor: Elemento que tiene subelementos: hojas u otros contenedores.
+* Cliente: Funciona con todos los elementos a través de la interfaz componente.
+
+Aplicabilidad
+* Utilizar cuando toqe implementar una estructura de objetos con forma de árbol.
+* Utilizar cuando el código cliente trate elementos simples y complejos de la misma forma.
+
+Ventajas
+* Se puede trabajar con comodidad gracias al polimorfismo y la recursión.
+* Principio de abierto/cerrado. Se puede introducir nuevos tipos de elemento en la aplicación sin descomponer el código existente.
+
+Desventajas
+* Para clases cuya funcionalidad difiere demasiado es difícil tener una interfaz común.

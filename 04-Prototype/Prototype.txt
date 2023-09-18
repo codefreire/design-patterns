@@ -1,0 +1,22 @@
+﻿Propósito
+* Permite copiar o CLONAR objetos existentes sin que el código dependa de sus clases.
+* El objeto clonado y el clon tienen diferente referencia en memoria.
+
+Solución
+* Declarar una interface con el método clonar o implementar ICLONEABLE para los objetos que soportan la clonación.
+* El método clonar crea un objeto a partir de la clase actual y lleva todos los valores de campo del viejo objeto, al nuevo.
+* Una copia superficial no copia las propiedades de tipos no nativos (objetos) usar MemberwiseClone(); ShallowCopy
+* Una copia profunda copia todo hasta los objetos de otras clases. usar MemberwiseClone(); y llenar el resto de campos de forma manual. DeepCopy
+
+Aplicabilidad
+* Cuando el código no deba depender de las clases concretas de objetos que se necesiten copiar.
+* Para reducir la cantidad de subclases que solo se diferencian en la forma en que inicializan sus respectivos objetos.
+
+Ventajas
+* Puede clonar objetos sin acoplarlos a sus clases concretas.
+* Puede evitar un código de inicialización repetido clonando prototipos prefabricados.
+* Puede crear objetos complejos con más facilidad.
+* Obtiene una alternativa a la herencia al tratar con preajustes de configuración para objetos complejos.
+
+Desventajas
+* Clonar objetos complejos con referencias circulares puede resultar complicado.

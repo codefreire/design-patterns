@@ -1,0 +1,27 @@
+﻿Propósito
+* Permite proporcionar un sustituto o marcador de posición para otro objeto.
+* Un proxy controla el acceso al objeto original, permitiéndote hacer algo antes o después de que la solicitud llegue al objeto original.
+
+Solución
+* Interfaz de Servicio: El proxy debe seguir esta interfaz para poder camuflarse como objeto de servicio.
+* Servicio: proporciona una lógica de negocio.
+* Proxy: tiene un campo de referencia que apunta a un objeto de servicio. Cuando el proxy finaliza su procesamiento, pasa la solicitud al objeto de servicio.
+* Cliente: debe funcionar con servicios y proxies a través de la misma interfaz.
+
+Aplicabilidad
+* Inicialización diferida (proxy virtual).
+* Control de acceso (proxy de protección).
+* Ejecución local de un servicio remoto (proxy remoto).
+* Solicitudes de registro (proxy de registro).
+* Resultados de solicitudes en caché (proxy de caché).
+* Referencia inteligente.
+
+Ventajas
+* Controlar el objeto de servicio sin que los clientes lo sepan.
+* Gestionar el ciclo de vida del objeto de servicio cuando a los clientes no les importa.
+* El proxy funciona incluso si el objeto de servicio no está listo o no está disponible.
+* Principio de abierto/cerrado. Introducir nuevos proxies sin cambiar el servicio o los clientes.
+
+Desventajas
+* El código puede complicarse ya que se introduce gran cantidad de clases nuevas.
+* La respuesta del servicio puede retrasarse.

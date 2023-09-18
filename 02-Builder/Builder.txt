@@ -1,0 +1,27 @@
+﻿Propósito
+* Permite construir objetos complejos paso a paso.
+* Permite producir distintos tipos de un objeto empleando el mismo constructor.
+* Desacoplar el código de construcción y colocarlo en objetos independientes llamados constructores.
+* No permite a otros objetos acceder al producto mientras se construye.
+* La clase directora define el orden en el que se ejecutan los pasos de construcción. mientras que el constructor proporciona la implementación de dichos pasos.
+* No es estrictamente necesario tener una clase directora.
+
+Solución
+* La interface CONSTRUCTORA declara pasos de construcción de producto para todos los constructores concretos.
+* Los CONSTRUCTORES CONCRETOS implementan como quieran la interface constructora y tienen su método de retorno.
+* Los PRODUCTOS son los objetos resultantes. No pertenecen a la jerarquía de clases o interface.
+* La clase DIRECTORA define el orden en el que se invocarán los pasos de construcción.
+* El CLIENTE asocia un objeto constructor concreto con la clase directora.
+
+Aplicabilidad
+* Para evitar un constructor telescópico (con muchos parámetros).
+* Para que el código sea capaz de crear distintas representaciones de ciertos productos.
+* Usar el patrón Builder junto al patrón Composite para construir árboles y objetos complejos.
+
+Ventajas
+* Se puede reutilizar el mismo código de construcción al construir varias representaciones de productos.
+* Se puede construir objetos paso a paso, aplazar pasos de la construcción o ejecutar pasos de forma recursiva.
+* Principio de responsabilidad única. Se puede aislar un código de construcción complejo de la lógica de negocio del producto.
+
+Desventajas
+* La complejidad general del código aumenta, ya que el patrón exige la creación de varias clases nuevas.

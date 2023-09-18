@@ -1,0 +1,24 @@
+﻿Propósito
+* Permite producir familias de objetos (fábrica de fábricas{familia de productos}) relacionados sin especificar sus clases concretas.
+
+Solución
+* Declarar interfaces para cada producto diferente de la familia de productos.
+* Todas las variantes de los productos implementen la interface correspondiente.
+* Declara la FÁBRICA ABSTRACTA que es una interface con una lista de métodos de creación para los productos que son parte de la familia de prductos.
+* Dichos métodos deben devolver productos abstractos representados por las interfaces de cada producto.
+* Una fábrica devuleve productos de tipo particular.
+* En resumen debe haber, una FÁBRICA ABSTRACTA, fábricas concretas, productos abstractos, productos concretos y el cliente.
+* Los productos de una familia generalmente pueden colaborar entre ellos. Una familia de productos puede tener varias variantes, pero los productos de una variante son incompatibles con los productos de otra.
+
+Aplicabilidad
+* Cuando el código deba funcionar con varias familias de productos relacionados. Para permitir extensibilidad, no deben depender de las clases concretas.
+* Cuando hay una clase con varios métodos de fábrica que nublen su responsabilidad principal.
+
+Ventajas
+* Puede tener la certeza de que los productos que se obtiene de una fábrica son compatibles entre sí.
+* Evita un acoplamiento fuerte entre productos concretos y el código cliente.
+* Principio de responsabilidad única. Puede mover el código de creación de productos a un solo lugar, haciendo que el código sea más fácil de mantener.
+* Principio de abierto/cerrado. Puede introducir nuevas variantes de productos sin descomponer el código cliente existente.
+
+Desventajas
+* El código puede complicarse ya que se introducen muchas interfaces y clases debido al patrón.

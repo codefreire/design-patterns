@@ -1,0 +1,18 @@
+﻿Propósito
+* Proporcionar una interfaz simplificada a una biblioteca, framework o cualquier otro grupo complejo de clases.
+
+Solución
+* Facade: Proporcionar un acceso y dirige a una parte específica de la funcionalidad del subsistema.
+* Fachada Adicional: Evitar contaminar una única fachada con funciones no relacionadas.
+* Subsistema Complejo: decenas de objetos diversos.
+* Cliente: utiliza la fachada en lugar de invocar directamente los objetos del subsistema.
+
+Aplicabilidad
+* Usar cuando se necesite una interfaz limitada pero directa a un subsistema complejo.
+* Usar cuando se quiera estructurar un subsistema en capas.
+
+Ventajas
+* Se puede aislar tu código de la complejidad de un subsistema.
+
+Desventajas
+* Una fachada puede convertirse en un objeto todopoderoso acoplado a todas las clases de una aplicación.

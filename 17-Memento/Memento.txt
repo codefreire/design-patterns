@@ -1,0 +1,20 @@
+﻿Propósito
+* Permite guardar y restaurar el estado previo de un objeto sin revelar los detalles de su implementación.
+
+Solución
+* clase Originadora: produce instantáneas de su propio estado, restaura su estado a partir de instantáneas cuando lo necesita.
+* Memento: objeto de valor que actúa como instantánea del estado del originador.
+* Cuidadora: sabe cuándo debe restaurarse el estado.
+
+Aplicabilidad
+* Para producir instantáneas del estado del objeto para poder restaurar un estado previo del objeto.
+* Cuando el acceso directo a los campos, consultores o modificadores del objeto viole su encapsulación.
+
+Ventajas
+* Producir instantáneas del estado del objeto sin violar su encapsulación.
+* Simplificar el código de la originadora permitiendo que la cuidadora mantenga el historial del estado de la originadora.
+
+Desventajas
+* Puede consumir mucha memoria RAM si los clientes crean mementos muy a menudo.
+* Las cuidadoras deben rastrear el ciclo de vida de la originadora para poder destruir mementos obsoletos.
+* Los lenguajes de programación dinámicos no pueden garantizar que el estado dentro del memento se mantenga intacto.

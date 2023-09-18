@@ -1,0 +1,19 @@
+﻿Propósito
+* Permite reducir las dependencias caóticas entre objetos. Restringe las comunicaciones directas entre los objetos,
+forzándolos a colaborar únicamente a través de un objeto mediador.
+
+Solución
+* Componentes: son varias clases que contienen cierta lógica de negocio. Cada componente tiene una referencia a una interfaz mediadora.
+* Interfaz Mediadora: declara métodos de comunicación con los componentes.
+* Mediadores Concretos: encapsulan las relaciones entre varios componentes.
+
+Aplicabilidad
+* Cuando resulte difícil cambiar algunas de las clases porque están fuertemente acopladas.
+* Cuando no se pueda reutilizar un componente en un programa diferente porque sea demasiado dependiente de otros componentes.
+* Cuando se está creando cientos de subclases de componente sólo para reutilizar un comportamiento básico en varios contextos.
+
+Ventajas
+* Principio de responsabilidad única. Extraer las comunicaciones entre varios componentes dentro de un único sitio.
+* Principio de abierto/cerrado. Introducir nuevos mediadores sin tener que cambiar los propios componentes.
+* Reducir el acoplamiento entre varios componentes de un programa.
+* Reutilizar componentes individuales con mayor facilidad.

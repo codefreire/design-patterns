@@ -1,0 +1,21 @@
+﻿Propósito
+* Permite pasar solicitudes a lo largo de una cadena de manejadores.
+* Al recibir una solicitud, cada manejador decide si la procesa o si la pasa al siguiente manejador de la cadena.
+
+Solución
+* Clase Manejadora: declara la interfaz común a todos los manejadores concretos.
+* Manejadores Concretos: contienen el código para procesar las solicitudes.
+* Cliente: puede componer cadenas una sola vez o componerlas dinámicamente.
+
+Aplicabilidad
+* Para procesar distintos tipos de solicitudes de varias maneras.
+* Para ejecutar varios manejadores en un orden específico.
+* Cuando el grupo de manejadores y su orden deban cambiar durante el tiempo de ejecución.
+
+Ventajas
+* Controlar el orden de control de solicitudes.
+* Principio de responsabilidad única. Desacoplar las clases que invoquen operaciones de las que realicen operaciones.
+* Principio de abierto/cerrado. Introducir nuevos manejadores en la aplicación sin descomponer el código cliente existente.
+
+Desventajas
+* Algunas solicitudes pueden acabar sin ser gestionadas.

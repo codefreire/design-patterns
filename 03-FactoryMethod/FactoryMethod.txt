@@ -1,0 +1,26 @@
+﻿Propósito
+* Proporciona una interfaz para crear objetos en una superclase, mientras permite a las subclases alterar el tipo de objetos que se crearán.
+* Los objetos devueltos por el método fábrica (Factory Method) a menudo se denominan productos.
+
+Solución
+* La interface debe tener métodos que tengan sentido en todos los productos.
+* Todos los productos deben seguir la interface.
+* Añadir el Método Fábrica (Factory Method) dentro de la clase CREADORA debe ser abstracto. Retorna tipo de la interface.
+* Sustituir los constructores de los productos por invocaciones al FACTORY METHOD.
+* Crear un grupo de subclases creadoras para cada tipo de producto, sobrescribir el Factory Method en las subcalses.
+* En resumen debe haber un creador general, creadores concretos, IProducto, productos concretos.
+* El creador concreto sobrescribe el FACTORY METHOD para cambiar el tipo de producto.
+* La interface debe ser implementada por todos ´productos concretos.
+
+Aplicabilidad
+* Cuando no se sabe de antemano las dependencias y los tipos exactos de los objetos con los que deba funcionar el código.
+* Para ofrecer a los usuarios, una forma de extender los componentes internos.
+* Para ahorrar recursos del sistema mediante la reutilización de objetos existentes en lugar de reconstruirlos cada vez.
+
+Ventajas
+* Evitar un acoplamiento fuerte entre el creador y los productos concretos.
+* Principio de responsabilidad única. Puede mover el código de creación de producto a un lugar del programa, haciendo que el código sea más fácil de mantener.
+* Principio de abierto/cerrado. Puede incorporar nuevos tipos de productos en el programa sin descomponer el código cliente existente.
+
+Desventajas
+* El código se puede complicar, al incorporar una multitud de nuevas subclases para implementar el patrón. La situación ideal sería introducir el patrón en una jerarquía existente de clases creadoras.

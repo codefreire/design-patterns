@@ -1,0 +1,23 @@
+﻿Propósito
+* Permite separar algoritmos de los objetos sobre los que operan.
+
+Solución
+* Interfaz Visitante: declara un grupo de métodos visitantes que pueden tomar elementos concretos de una estructura de objetos como argumentos.
+* Visitante Concreto: implementa varias versiones de los mismos comportamientos, personalizadas para las distintas clases de elemento concreto.
+* Interfaz Elemento: declara un método para “aceptar” visitantes.
+* Elemento Concreto: debe implementar el método de aceptación.
+* Cliente: no son conscientes de todas las clases de elemento concreto porque trabajan con objetos de esa colección a través de una interfaz abstracta.
+
+Aplicabilidad
+* Para realizar una operación sobre todos los elementos de una compleja estructura de objetos.
+* Para limpiar la lógica de negocio de comportamientos auxiliares.
+* Cuando un comportamiento solo tenga sentido en algunas clases de una jerarquía de clases.
+
+Ventajas
+* Principio de abierto/cerrado. Introducir un nuevo comportamiento que puede funcionar con objetos de clases diferentes sin cambiar esas clases.
+* Principio de responsabilidad única. Tomar varias versiones del mismo comportamiento y ponerlas en la misma clase.
+* Un objeto visitante puede acumular cierta información útil mientras trabaja con varios objetos.
+
+Desventajas
+* Actualizar todos los visitantes cada vez que una clase se añada o elimine de la jerarquía de elementos.
+* Los visitantes pueden carecer del acceso necesario a los campos y métodos privados de los elementos con los que se supone que deben trabajar.

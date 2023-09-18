@@ -1,0 +1,24 @@
+﻿Propósito
+* Permite añadir funcionalidades a objetos colocando estos objetos dentro de objetos encapsuladores especiales que contienen estas funcionalidades.
+
+Solución
+* Componente: declara la interfaz común para wrappers y objetos envueltos.
+* Componente Concreto: Define el comportamiento básico, que los decoradores pueden alterar.
+* Decoradora Base: tiene un campo para referenciar un objeto envuelto y delega todas las operaciones.
+* Decoradores Concretos: definen funcionalidades adicionales que se pueden añadir dinámicamente a los componentes.
+* Cliente: puede envolver componentes en varias capas de decoradores.
+
+Aplicabilidad
+* Para asignar funcionalidades adicionales a objetos durante el tiempo de ejecución sin descomponer el código que utiliza esos objetos.
+* Cuando no sea posible extender el comportamiento de un objeto utilizando la herencia.
+
+Ventajas
+* Puede extender el comportamiento de un objeto sin crear una nueva subclase.
+* Puede añadir o eliminar responsabilidades de un objeto durante el tiempo de ejecución.
+* Puede combinar varios comportamientos envolviendo un objeto con varios decoradores.
+* Principio de responsabilidad única. Dividir una clase monolítica en varias clases más pequeñas.
+
+Desventajas
+* Resulta difícil eliminar un wrapper específico de la pila de wrappers.
+* Es difícil implementar un decorador de tal forma que su comportamiento no dependa del orden en la pila de decoradores.
+* El código de configuración inicial de las capas pueden tener un aspecto desagradable.

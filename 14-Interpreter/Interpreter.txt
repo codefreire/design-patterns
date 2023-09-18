@@ -1,0 +1,21 @@
+﻿Propósito
+* El patrón Interpreter se utiliza para definir una gramática para un lenguaje y proporcionar un intérprete que pueda evaluar las sentencias escritas en ese lenguaje. Este patrón se utiliza comúnmente en el desarrollo de compiladores, lenguajes de programación específicos de dominio (DSL) y sistemas de procesamiento de texto.
+
+Solución
+* Contexto (Context): Representa el estado global del intérprete y contiene información que debe ser compartida entre las diferentes expresiones. El contexto también puede contener los resultados parciales o finales de la interpretación.
+* Expresión Abstracta (Abstract Expression): Define una interfaz común para todas las expresiones del lenguaje. Puede ser una interfaz o una clase abstracta que declare un método interpret(context).
+* Expresiones Concretas (Concrete Expressions): Son las clases que implementan las expresiones del lenguaje específico. Cada clase concreta debe proporcionar una implementación del método interpret(context) que realiza la evaluación de la expresión.
+
+Aplicabilidad
+* Interpretar un lenguaje o una gramática específica.
+* Evaluar expresiones complejas y compuestas a partir de elementos más simples.
+* Cambiar o extender fácilmente las reglas de interpretación sin modificar el código cliente.
+
+Ventajas
+* Facilita la interpretación de gramáticas y lenguajes específicos de dominio.
+* Permite la extensibilidad del intérprete al agregar nuevas expresiones sin modificar el código existente.
+* Separa la gramática y la evaluación de las expresiones, lo que facilita el mantenimiento y la escalabilidad.
+
+Desventajas
+* Puede ser ineficiente en términos de rendimiento si se utilizan expresiones complejas y anidadas.
+* Puede resultar en un gran número de clases concretas si la gramática es compleja, lo que puede dificultar la implementación y el mantenimiento.

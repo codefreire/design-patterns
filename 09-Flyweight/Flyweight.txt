@@ -1,0 +1,18 @@
+﻿Propósito
+* Permite mantener más objetos dentro de la cantidad disponible de RAM compartiendo las partes comunes del estado entre varios objetos en lugar de cada uno.
+
+Solución
+* Flyweight: contiene la parte del estado del objeto original que pueden compartir varios objetos.
+* Contexto: contiene el estado extrínseco, único en todos los objetos originales.
+* Cliente: calcula o almacena el estado extrínseco de los objetos flyweight.
+* Fábrica flyweight: gestiona un grupo de objetos flyweight existentes.
+
+Aplicabilidad
+*  Usar únicamente cuando el programa deba soportar una enorme cantidad de objetos que apenas quepan en la RAM disponible.
+
+Ventajas
+* Ahorrar mucha RAM, siempre que tu programa tenga toneladas de objetos similares.
+
+Desventajas
+* Cambiar RAM debido ciclos CPU cuando deba calcularse de nuevo parte de la información de contexto cada vez que alguien invoque un método flyweight.
+* El código se complica mucho. Los nuevos miembros del equipo siempre estarán preguntándose por qué el estado de una entidad se separó de tal manera.

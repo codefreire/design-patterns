@@ -1,0 +1,24 @@
+﻿Propósito
+* Permite recorrer elementos de una colección sin exponer su representación subyacente.
+
+Solución
+* Interfaz Iteradora: declara las operaciones necesarias para recorrer una colección.
+* Iteradores Concretos: implementan algoritmos específicos para recorrer una colección.
+* Interfaz Colección: declara uno o varios métodos para obtener iteradores compatibles con la colección.
+* Colecciones Concretas: devuelven nuevas instancias de una clase iteradora concreta particular cada vez que el cliente solicita una.
+* Cliente: debe funcionar con colecciones e iteradores a través de sus interfaces.
+
+Aplicabilidad
+* Usar cuando la colección tenga una estructura de datos compleja a nivel interno.
+* Para reducir la duplicación en el código de recorrido a lo largo de la aplicación.
+* Usar cuando quieras que tu código pueda recorrer distintas estructuras de datos.
+
+Ventajas
+* Principio de responsabilidad única. Limpiar el código cliente y las colecciones extrayendo algoritmos de recorrido voluminosos y colocándolos en clases independientes.
+* Principio de abierto/cerrado. Implementar nuevos tipos de colecciones e iteradores y pasarlos al código existente sin descomponer nada.
+* Recorrer la misma colección en paralelo porque cada objeto iterador contiene su propio estado de iteración.
+* Retrasar una iteración y continuar cuando sea necesario.
+
+Desventajas
+* Aplicar el patrón puede resultar excesivo si se tiene únicamente colecciones sencillas.
+* Utilizar un iterador puede ser menos eficiente que recorrer directamente los elementos de algunas colecciones especializadas.

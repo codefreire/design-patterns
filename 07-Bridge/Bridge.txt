@@ -1,0 +1,24 @@
+﻿Propósito
+* Permite dividir una clase grande o un grupo de clases relacionadas
+  en dos jerarquías separadas (abstracción e implementación)
+
+Solución
+* Abstracción: Ofrece lógica de control de alto nivel. Depende de que la implementación haga el trabajo de bajo nivel.
+* Implementación: declara la interfaz común a todas las implementaciones concretas.
+* Implementaciones concretas: contienen código específico.
+* Abstracciones Refinadas: proporcionan variantes de lógica de control.
+* Cliente: tiene que vincular el objeto de la abstracción con uno de los objetos de la implementación.
+
+Aplicabilidad
+* cuando se requiera dividir y organizar una clase monolítica que tenga muchas variantes de una sola funcionalidad.
+* cuando se necesite extender una clase en varias dimensiones independeientes.
+* cuando se necesite poder cambiar implementaciones durante el tiempo de ejecución.
+
+Ventajas
+* Crear clases y aplicaciones independientes de plataforma.
+* El código cliente funciona con abstracciones de alto nivel. No está expuesto a los detalles de la plataforma.
+* Principio de abierto/cerrado. Puede introducir nuevas abstracciones e implementaciones independientes entre sí.
+* Principio de responsabilidad única. Puede centrarse en la lógica de alto nivel en la abstracción y en detalles de la plataforma en la implementación.
+
+Desventajas
+*  El código puede complicarse si se aplica el patrón a una clase muy cohesionada.

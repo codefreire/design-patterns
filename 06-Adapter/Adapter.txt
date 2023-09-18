@@ -1,0 +1,21 @@
+﻿Propósito
+* Permite la colaboración entre objetos con interfaces incompatibles.
+* Traducir formatos Ej: XML a JSON por si una aplicación no soporta XML.
+* Conecta clases que de otro modo serían incompatibles, trabajen juntas sin problemas.
+
+Solución
+* Cliente: contiene la lógica de negocio existente del programa.
+* Interfaz con el Cliente: otras clases la deben seguir para poder colaborar con el código cliente.
+* Servicio: clase útil, el cliente no puede utilizarla directamente porque tiene una interfaz incompatible.
+* Adapter: Clase capaz de trabajar con cliente y servicio, implementa interfaz cliente y usa el servicio. Traduce los formatos.
+
+Aplicabilidad
+* Cuando se requiera usar una clase existente, pero cuya interfaz no sea compatible con el resto del código.
+* Cuando se requiera reutilizar varias subclases existentes que carezcan de alguna funcionalidad común que no pueda añadirse a la superclase.
+
+Ventajas
+* Principio de responsabilidad única. Puedes separar la interfaz o el código de conversión de datos de la lógica de negocio.
+* Principio de abierto/cerrado. Puedes introducir nuevos tipos de adaptadores al programa sin descomponer el código cliente existente.
+
+Desventajas
+* La complejidad general del código aumenta. resulta más sencillo cambiar la clase de servicio de modo que coincida con el resto del código.

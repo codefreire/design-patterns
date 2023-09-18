@@ -1,0 +1,24 @@
+﻿Propósito
+* Asegura de que una clase tenga una ÚNICA INSTANCIA,
+* Proporciona un PUNTO DE ACCESO GLOBAL a dicha instancia.
+
+Solución
+* Singleton debe ser una clase SELLADA (evitar herencia)
+* Hacer PRIVADO el CONSTRUCTOR siempre (evitar NEW).
+* Crear un MÉTODO de creación ESTÁTICO que actúe como CONSTRUCTOR. Si no existe la instancia la crea sino la devuelve.
+* Crear un CAMPO ESTÁTICO que almacena la INSTANCIA.
+
+Aplicabilidad
+* Cuando una clase deba tener una instancia para todos los clientes.
+* Cuando se necesite un control más estricto de las variables globales.
+
+Ventajas
+* Tener la certeza de que una clase tiene una única instancia.
+* Obtener un punto de acceso global a dicha instancia.
+* Solo se inicializa cuando se requiere por primera vez.
+
+Desventajas
+* Vulnera el Principio de responsabilidad única. Resuelve dos problemas al mismo tiempo.
+* Requiere de un tratamiento especial en un entorno con múltiples hilos de ejecución, para evitar que se creen más de un objeto Singleton.
+* Resulta complicado realizar pruebas unitarias debido a las limitaciones de frameworks de prueba.
+* Puede enmascarar un mal diseño cuando los componentes del programa saben demasiado los unos sobre los otros.

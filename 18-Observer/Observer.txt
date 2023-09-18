@@ -1,0 +1,19 @@
+﻿Propósito
+* Permite definir un mecanismo de suscripción para notificar a varios objetos sobre cualquier evento que le suceda al objeto que están observando.
+
+Solución
+* Notificador: envía eventos de interés a otros objetos.
+* Interfaz Suscriptora: consiste en un método actualizar.
+* Suscriptores Concretos: realizan algunas acciones en respuesta a las notificaciones emitidas por el notificador.
+* El Cliente crea objetos tipo notificador y suscriptor por separado y después registra a los suscriptores para las actualizaciones del notificador.
+
+Aplicabilidad
+* Usar cuando los cambios en el estado de un objeto puedan necesitar cambiar otros objetos.
+* Usar cuando algunos objetos deban observar a otros.
+
+Ventajas
+* Principio de abierto/cerrado. Introducir nuevas clases suscriptoras sin tener que cambiar el código de la notificadora.
+* Puede establecer relaciones entre objetos durante el tiempo de ejecución.
+
+Desventajas
+* Los suscriptores son notificados en un orden aleatorio.

@@ -1,0 +1,24 @@
+﻿Propósito
+* Convierte una solicitud en un objeto independiente que contiene toda la información sobre la solicitud.
+
+Solución
+* Clase Emisora: responsable de inicializar las solicitudes.
+* Interfaz Comando: declara un único método para ejecutar el comando.
+* Comandos Concretos: implementan varios tipos de solicitudes.
+* Clase Receptora: contiene lógica de negocio.
+* Cliente: crea y configura los objetos de comando concretos.
+
+Aplicabilidad
+* Para parametrizar objetos con operaciones.
+* Para poner operaciones en cola, programar su ejecución, o ejecutarlas de forma remota.
+* Para implementar operaciones reversibles.
+
+Ventajas
+* Principio de responsabilidad única. Desacoplar las clases que invocan operaciones de las que realizan esas operaciones.
+* Principio de abierto/cerrado. Introducir nuevos comandos en la aplicación sin descomponer el código cliente existente.
+* Implementar deshacer/rehacer.
+* Implementar la ejecución diferida de operaciones.
+* Ensamblar un grupo de comandos simples para crear uno complejo.
+
+Desventajas
+* El código puede complicarse, ya que se introduce una nueva capa entre emisores y receptores.
